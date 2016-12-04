@@ -1,0 +1,32 @@
+{
+  "name": "bankrot-parser",
+  "version": "1.0.0",
+  "description": "Parser Bankort and Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strelov1/bankrot-parser.git"
+  },
+  "keywords": [
+    "parser",
+    "bankrot",
+    "server",
+    "cluster",
+    "phantom"
+  ],
+  "dependencies": {
+    "express": "^4.14.0",
+    "cluster": "^0.7.7",
+    "phantom": "^3.2.0"
+  },
+  "author": "strelov1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strelov1/bankrot-parser/issues"
+  },
+  "homepage": "https://github.com/strelov1/bankrot-parser#readme"
+}

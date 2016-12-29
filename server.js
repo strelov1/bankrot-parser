@@ -19,7 +19,7 @@ if (cluster.isMaster) {
         express = require("express"),
         serve = express();
 
-    serve.get('/', function (req, res) {
+    serve.get('/phantom/', function (req, res) {
         phantom.create().then(function (ph) {
             ph.createPage().then(function (page) {
                 page.property('customHeaders',  {

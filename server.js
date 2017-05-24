@@ -33,12 +33,19 @@ if (cluster.isMaster) {
                 page.open('https://bankrot.fedresurs.ru/DebtorsSearch.aspx', 'post', post).then(function (status) {
                   
                     page.invokeMethod('evaluate', function() {
-                        return document.querySelector('#ctl00_cphBody_gvDebtors > tbody > tr:nth-child(2) > td:nth-child(2) > a').href;
+                        var data = [];
+                        $('#ctl00_cphBody_gvDebtors > tbody > tr').each(function(index) {
+                            var a = $(this).find('td:nth-child(2) > a')[0];
+                            if (a !== undefined) {
+                                data.push(a.href);  
+                            }
+                        });
+                        return data;
                     }).then(function(data) {
                         if (data == null) {
                           res.json([]);
                         } else {
-                          res.json([data]);
+                          res.json(data);
                         }
                         page.close();
                         ph.exit(0);
